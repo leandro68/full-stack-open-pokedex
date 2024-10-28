@@ -1,5 +1,6 @@
-import { useEffect, useState } from 'react'
-import axios from 'axios'
+/* eslint-disable linebreak-style */
+import { useEffect, useState } from "react"
+import axios from "axios"
 
 const useApi = (url, mapResults = (result) => result) => {
   const [data, setData] = useState()

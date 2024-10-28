@@ -1,7 +1,8 @@
-import React from "react";
+/* eslint-disable linebreak-style */
+import React from "react"
 
 const ErrorMessage = ({ error }) => (
   <div data-testid="error">An error occured: {error.toString()}</div>
-);
+)
 
-export default ErrorMessage;
+export default ErrorMessage

@@ -1,4 +1,5 @@
-import React from 'react'
+/* eslint-disable linebreak-style */
+import React from "react"
 
 const PokemonAbility = ({ abilityName }) => (
   <div className="pokemon-ability">

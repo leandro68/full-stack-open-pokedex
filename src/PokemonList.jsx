@@ -1,5 +1,6 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+/* eslint-disable linebreak-style */
+import React from "react"
+import { Link } from "react-router-dom"
 
 const PokemonList = ({ pokemonList }) => {
   return (
