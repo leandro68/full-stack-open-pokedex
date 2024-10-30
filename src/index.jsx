@@ -7,7 +7,6 @@ import "./styles.css"
 
 ReactDOM.createRoot(document.getElementById("app")).render(
   <Router>
-    <h4>version 3.1</h4>
     <App />
   </Router>
 )
