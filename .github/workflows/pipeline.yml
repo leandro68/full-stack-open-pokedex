@@ -32,26 +32,18 @@ jobs:
     needs: [simple_deployment_pipeline] 
     runs-on: ubuntu-20.04 
     steps:   
-      - name: Notify success or failure 
-        uses: BubbleProd/discord-webhook-notify@v2
-        with:
-          details: Notifying Discord by Lean
       - name: Test Success
-        uses: BubbleProd/discord-webhook-notify@v2
         if: success()
-        with:
-          severity: info
-          details: Test Succeeded!
-          username: Lean
-          webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
+        run: | 
+          curl -X POST -H "Content-Type: application/json" \ 
+          -d '{"content": "Test Succeeded!"}'\
+          ${{ secrets.DISCORD_WEBHOOK }}
       - name: Test Failure
-        uses: BubbleProd/discord-webhook-notify@v2
         if: failure()
-        with:
-          severity: error
-          username: Lean
-          details: Test Failed!
-          webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
+        run: | 
+          curl -X POST -H "Content-Type: application/json" \ 
+          -d '{"content": "Test Failed!"}'\
+          ${{ secrets.DISCORD_WEBHOOK }}
 
   tag_release:
     needs: [simple_deployment_pipeline]
