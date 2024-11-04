@@ -35,7 +35,7 @@ jobs:
       - name: Notify success or failure 
         run: echo "Notifying Discord by Lean"
       - name: Test Success
-        uses: rjstone/discord-webhook-notify@v1
+        uses: rjstone/discord-webhook-notify@v1.0.4
         if: success()
         with:
           severity: info
@@ -43,7 +43,7 @@ jobs:
           username: Lean
           webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
       - name: Test Failure
-        uses: rjstone/discord-webhook-notify@v1
+        uses: rjstone/discord-webhook-notify@v1.0.4
         if: failure()
         with:
           severity: error
