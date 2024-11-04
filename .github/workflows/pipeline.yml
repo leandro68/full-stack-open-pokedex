@@ -33,9 +33,11 @@ jobs:
     runs-on: ubuntu-20.04 
     steps:   
       - name: Notify success or failure 
-        run: echo "Notifying Discord by Lean"
+        uses: BubbleProd/discord-webhook-notify@v2
+        with:
+          details: Notifying Discord by Lean
       - name: Test Success
-        uses: rjstone/discord-webhook-notify@v1.0.4
+        uses: BubbleProd/discord-webhook-notify@v2
         if: success()
         with:
           severity: info
@@ -43,7 +45,7 @@ jobs:
           username: Lean
           webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
       - name: Test Failure
-        uses: rjstone/discord-webhook-notify@v1.0.4
+        uses: BubbleProd/discord-webhook-notify@v2
         if: failure()
         with:
           severity: error
