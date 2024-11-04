@@ -35,15 +35,11 @@ jobs:
       - name: Test Success
         if: success()
         run: | 
-          curl -X POST -H "Content-Type: application/json" \ 
-          -d '{"content": "Test Succeeded!"}'\
-          ${{ secrets.DISCORD_WEBHOOK }}
+          curl -X POST -H "Content-Type: application/json" -d '{"content": "Test Succeeded!"}' ${{secrets.DISCORD_WEBHOOK }}
       - name: Test Failure
         if: failure()
-        run: | 
-          curl -X POST -H "Content-Type: application/json" \ 
-          -d '{"content": "Test Failed!"}'\
-          ${{ secrets.DISCORD_WEBHOOK }}
+        run: |
+          curl -X POST -H "Content-Type: application/json" -d '{"content": "Test Failed!"}' ${{ secrets.DISCORD_WEBHOOK }}
 
   tag_release:
     needs: [simple_deployment_pipeline]
