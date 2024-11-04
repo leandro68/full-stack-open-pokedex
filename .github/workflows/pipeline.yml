@@ -32,6 +32,8 @@ jobs:
     needs: [simple_deployment_pipeline] 
     runs-on: ubuntu-20.04 
     steps:   
+      - name: Notify success or failure 
+        run: echo "Notifying Discord"
       - name: Test Success
         uses: rjstone/discord-webhook-notify@v1
         if: success()
