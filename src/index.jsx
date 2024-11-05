@@ -7,7 +7,7 @@ import "./styles.css"
 
 ReactDOM.createRoot(document.getElementById("app")).render(
   <Router>
-    <p>version 0.0.2 con #push</p>
+    <p>version 0.0.6</p>
     <App />
   </Router>
 )
